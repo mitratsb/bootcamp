@@ -70,25 +70,78 @@
 #         list1.append(i)
 # print(list1)
 
-#way1
-list1=[]
-is_finished=False
-while not is_finished:
-    name=input()
-    if name != "exit":
-        list1.append(name)
-    else: 
-        is_finished=True
-        print(list1)
+# #way1
+# list1=[]
+# is_finished=False
+# while not is_finished:
+#     name=input()
+#     if name != "exit":
+#         list1.append(name)
+#     else: 
+#         is_finished=True
+#         print(list1)
         
-#way2 with break
-list2=[]
+# #way2 with break
+# list2=[]
+# while True:
+#     name=input()
+#     if name=="exit":
+#         print(name)
+#         break
+#     else:
+#         list2.append(name)
+# else:
+#     print("loop else")
+
+# #tuple and set
+# tuple1=(1,2,3)
+
+# set1={1,2,3}
+
+#کاربر به تعداد دلخواه اسم و شماره تلفن اضافه کنه و با اگزیت خارج بشه
+
+# phonebook={}
+
+# while True:
+#     a=input("name : ")
+#     if a!="exit":
+#         b=input("phone number : ")
+#         phonebook.update({a:b})
+#     else:
+#         break
+    
+# for key,value in phonebook.items():
+#     print(key,":",value)
+    
+#قابلیت اضافه و جستجو و حذف و نمایش به دفترچه تلفن بده
+phonebook={}
 while True:
-    name=input()
-    if name=="exit":
-        print(name)
+    command = input("Enter your command(add/remove/search/show/exit) : ")
+    if command=="add":
+        name=input("Enter name : ")
+        phone_number=input(f"Enter {name}'s phone number : ")
+        phonebook.update({name:phone_number})
+        print(f"{name} was added.")
+    elif command=="remove":
+        name=input("who do you want to remove? : ")
+        phonebook.pop(name)
+        print(f'{name} was removed.')
+    elif command=="search":
+        name=input("Enter a name to search : ")
+        print(name,":",phonebook[name])
+    elif command=="show":
+        if len(phonebook)==0:
+            print("phone book is empty")
+        else:
+            for key,value in phonebook.items():
+                print(key,":",value)
+    elif command=="exit":
         break
-    else:
-        list2.append(name)
-else:
-    print("loop else")
+    
+
+        
+        
+    
+    
+
+    
