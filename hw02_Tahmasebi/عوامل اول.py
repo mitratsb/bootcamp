@@ -40,3 +40,8 @@ for y in list2:
 print(res1[:-1])
 
 
+
+
+
+    
+        
